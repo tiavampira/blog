@@ -1,37 +1,46 @@
 <?php
-    require_once '../core/sql.php';
 
-    $id = 1;
-    $nome = 'Ellen';
-    $comentario = 'aqui se foi um programa bem elaborado';
-    $data_criacao = '10/08/2022';
-    $dados = ['nome'         => $nome,
-              'comentario'   => $comentario,
-              'data_criacao' => $data_criacao];
+    require_once '../includes/funcoes.php' ;
 
-    $entidade = 'usuario';
-    $criterio = [['id', '=', $id]];
-    $campos = ['id', 'nome', 'data de criação'];
-    print_r($dados);
-    echo '<br>';
-    print_r($campos);
-    echo '<br>';
-    print_r($criterio);
-    echo '<br>';
+    require_once '../core/conexao_mysql.php' ;
 
-    // teste geração INSERT
-    $instrucao = insert($entidade, $dados);
-    echo $instrucao.'<br>';
+    require_once '../core/sql.php' ;
 
-    //teste geração UPDATE
-    $instrucao = update($entidade, $dados, $criterio);
-    echo $instrucao.'<br>';
+    require_once '../core/mysql.php' ;
 
-    //teste geração SELECT
-    $instrucao = select($entidade, $campos, $criterio);
-    echo $instrucao.'<br>';
+    insert_teste_avaliacao(5, 'DAORA EM PAE', 1, 1);
 
-    //teste geração DELETE
-    $instrucao = delete($entidade, $criterio);
-    echo $instrucao.'<br>';
+    buscar_teste_avaliacao();
+
+    update_teste_avaliacao(3, 'COMMIT', 1);
+
+    buscar_teste_avaliacao();
+
+
+    function insert_teste_avaliacao ($nota, $comentario, $usuario_id, $post_id) : void 
+    {
+        $dados = ['nota' => $nota, 'comentario' => $comentario, 'usuario_id' => $usuario_id, 'post_id' => $post_id] ;
+
+        insere('avaliacao', $dados);
+      
+    }
+
+    function buscar_teste_avaliacao () : void 
+    {
+        $avaliacoes = buscar('avaliacao', [ 'id', 'nota', 'comentario', 'usuario_id', 'post_id'], [], '') ;
+
+        print_r($avaliacoes);
+       
+    }
+
+    function update_teste_avaliacao ($id, $nota, $comentario) : void
+    {
+        $dados = ['nota' => $nota, 'comentario' => $comentario] ;
+
+        $criterio = [['id', '=', $id]] ;
+        
+        atualiza('avaliacao', $dados, $criterio);
+        
+    }
+
 ?>
