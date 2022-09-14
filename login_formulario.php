@@ -3,7 +3,7 @@
     <head>
         <title>Login | Projeto para Web com PHP</title>
         <link rel="stylesheet"
-            href="lib/bootstrap-4.2.1-dist/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+            href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -32,7 +32,7 @@
                                     require="required" id="senha" name="senha">
                             </div>
                             <div class="text-right">
-                                <button class="btn btn-sucess"
+                                <button class="btn btn-success"
                                     type="submit">Acessar</button>
                             </div>
                         </form>

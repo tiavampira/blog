@@ -22,9 +22,9 @@
                         include 'includes/menu.php';
                         ?>
                 </div>
-                <div class="col-md-10" style="padding-top: 550px;">
+                <div class="col-md-10" style="padding-top: 50px;">
                     <!--conteudo//-->
-                    <h2>Pagina Inicial </h2>,
+                    <h2>Pagina Inicial </h2>
                     <?php
                         include 'includes/busca.php'
                     ?>
@@ -77,7 +77,7 @@
                                 $data = date_format($data,'d/m/Y H:i:s');
                             ?>
                             <a class="list-grouo-item list-group-item-action"
-                                href="post_detalhe.php?post=<?php echo $post['id1']?>">
+                                href="post_detalhe.php?post=<?php echo $post['id']?>">
                                 <strong><?php echo $post ['titulo']?></strong>
                                 [<?php echo $post['nome']?>]
                                 <span class="badge badge-dark"><?php echo $data?></span>

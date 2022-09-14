@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <litle>Post | Projeto para Web com PHP</litle>
+        <title>Post | Projeto para Web com PHP</title>
         <link rel="stylesheet"
-            href="lib/bootstrap-4.2.1-dist/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+            href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -55,13 +55,13 @@
                             value="<?php echo $entidade['id'] ?? '' ?>">
                         <div class="form-group">
                                 <label for="titulo">Título</label>
-                                <input class="form-group" type="text"
+                                <input class="form-control" type="text"
                                     require="require" id="titulo" name="titulo"
                                     value="<?php echo $entidade['titulo'] ?? '' ?>">
                         </div>
                         <div class="form-group">
                                 <label for="texto">Texto</label>
-                                <textarea class="form-group" type="text"
+                                <textarea class="form-control" type="text"
                                     require="require" id="texto" name="texto" rows="5">
                                     <?php echo $entidade['texto'] ?? '' ?>
                                 </textarea>
@@ -91,8 +91,8 @@
                                 </div>
                             </div>
                         </div>   
-                        <div class="texto-right">  
-                            <button class="btn btn-sucess"
+                        <div class="text-right">  
+                            <button class="btn btn-success"
                                     type="submit">Salvar</button>
                         </div>
                     </form>

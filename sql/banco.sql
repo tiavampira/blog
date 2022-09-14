@@ -42,3 +42,9 @@ CREATE TABLE avaliacao (
 	CONSTRAINT fk_avaliacao_post FOREIGN KEY (post_id) REFERENCES post (id)
 
 );
+
+select * from post;
+
+update usuario set ativo=1, adm=1 where id=1;
+
+insert into post (titulo, texto, usuario_id) values ('A beleza do Eduardo', 'O Eduardo é muito lindo setadoido', 1);
