@@ -152,7 +152,7 @@ string $ordem = null) : array
 
         $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
         
-        if(isset($$nome_campo)) {
+        if(isset($nome_campo)) {
             $nome_campo = $nome_campo . '_' . rand();
         }
 
@@ -162,11 +162,10 @@ string $ordem = null) : array
     }
 
     $instrucao = select($entidade, $campos, $coringa_criterio, $ordem);
-
     $conexao = conecta();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
-
+    
     if(isset($tipo)){
         $comando = 'mysqli_stmt_bind_param($stmt,';
             $comando .= "'" . implode('', $tipo). "'";
@@ -185,7 +184,7 @@ string $ordem = null) : array
     }
 
     $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
-
+    
     mysqli_stmt_close($stmt);
 
     desconecta($conexao);
