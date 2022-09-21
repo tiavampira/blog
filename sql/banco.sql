@@ -45,6 +45,6 @@ CREATE TABLE avaliacao (
 
 select * from post;
 
-update usuario set ativo=1, adm=1 where id=1;
+update usuario set adm=1 where id=1;
 
 insert into post (titulo, texto, usuario_id) values ('A beleza do Eduardo', 'O Eduardo é muito lindo setadoido', 1);

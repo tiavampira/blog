@@ -20,7 +20,7 @@
                     where usuario.id = post.usuario_id) as nome'
         ],
         [
-            ['id', '=', $posts]
+            ['id', '=', $post]
         ]
 );
         $post = $posts[0];
@@ -31,8 +31,7 @@
 <html>
     <head>
         <title><?php echo $post['titulo']?></title>
-        <link rel="stylesheet"
-              href="lib/bootstrap-4.2.1-dist/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -48,14 +47,14 @@
             <div class="col-md-12">
                 <?php include 'includes/menu.php'; ?>
                 </div>
-            <div class="col-md-10" style="padding-top: 50;"> 
+            <div class="col-md-10" style="padding-top: 50px;"> 
                 <div class="card-body">
-                    <h5 class="card-titule"><?php echo $post['titulo']?></h5>
-                    <h5 class="card-subtitule mb-2 text-muted">
+                    <h5 class="card-title"><?php echo $post['titulo']?></h5>
+                    <h5 class="card-subtitle mb-2 text-muted">
                         <?php echo $data_post?> Por <?php echo $post['nome']?>
                     </h5>
                     <div class="card-text">
-                        <?php echo html_entity_decode($post)['titulo']?>
+                        <?php echo html_entity_decode($post['texto'])?>
                         </div>
                     </div>
                 </div>
