@@ -36,7 +36,7 @@
                         require_once 'core/mysql.php';
 
                         foreach($_GET as $indice => $dados){
-                                $$indice = limparDados($dado);
+                                $$indice = limparDados($dados);
                         }
 
                         $data_atual = date('Y-m-d h:i:s');
